@@ -5,19 +5,19 @@ pipeline {
         stage('Clean') {
             steps {
                 echo 'Building..'
-                sh "mvn clean -Dbrowser=localchrome"
+                sh "mvn clean -Dbrowser=chrome"
             }
         }
         stage('Build') {
             steps {
                 echo 'Versioning..'
-                sh "mvn clean -X -Dbrowser=localchrome"
+                sh "mvn clean -X -Dbrowser=chrome"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh "mvn clean install test -Dbrowser=localchrome"
+                sh "mvn clean install test -Dbrowser=chrome"
             }
         }
 
